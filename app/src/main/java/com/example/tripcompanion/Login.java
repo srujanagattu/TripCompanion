@@ -16,4 +16,8 @@ public class Login extends AppCompatActivity {
         Intent intent=new Intent(this,TripOptions.class);
         startActivity(intent);
     }
+    public void SignupAct(View v){
+        Intent ini=new Intent(this,SignUp.class);
+        startActivity(ini);
+    }
 }

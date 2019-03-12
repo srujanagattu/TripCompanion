@@ -80,16 +80,16 @@
 
     </android.support.v7.widget.CardView>
 
-    <TextView
-        android:id="@+id/textView"
+    <Button
+        android:id="@+id/btn1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/button"
         android:layout_centerInParent="true"
-        android:textSize="24dp"
-        android:text="Sign Up"
         android:layout_marginTop="30dp"
+        android:onClick="SignupAct"
+        android:text="Sign Up"
         android:textColor="@android:color/black"
 
-        />
+        android:textSize="24dp" />
 </RelativeLayout>

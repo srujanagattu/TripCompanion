@@ -13,6 +13,8 @@
         <activity android:name=".Destination"></activity>
         <activity android:name=".TripOptions"></activity>
         <activity android:name=".MapIsHere"></activity>
+        <activity android:name=".SignUp"></activity>
+        <activity android:name=".PeopleList"></activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -5,14 +5,14 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
-public class Destination extends AppCompatActivity {
+public class SignUp extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.destination);
+        setContentView(R.layout.signup);
     }
-    public void PeopleList(View v){
-        Intent intent=new Intent(this,PeopleList.class);
+    public void GoBackToLogin(View v){
+        Intent intent=new Intent(this,Login.class);
         startActivity(intent);
     }
 }
