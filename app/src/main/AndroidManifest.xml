@@ -12,6 +12,7 @@
         <activity android:name=".Login"></activity>
         <activity android:name=".Destination"></activity>
         <activity android:name=".TripOptions"></activity>
+        <activity android:name=".MapIsHere"></activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

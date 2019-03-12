@@ -15,4 +15,8 @@ public class TripOptions extends AppCompatActivity {
         Intent intent=new Intent(this,Destination.class);
         startActivity(intent);
     }
+    public void MapAct(View v){
+        Intent intent=new Intent(this,MapIsHere.class);
+        startActivity(intent);
+    }
 }
