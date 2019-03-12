@@ -1,19 +1,18 @@
 package com.example.tripcompanion;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
-public class Login extends AppCompatActivity {
-
+public class TripOptions extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.trip_options);
     }
-    public void ThirdAct(View v){
-        Intent intent=new Intent(this,TripOptions.class);
+    public void FourthAct(View v){
+        Intent intent=new Intent(this,Destination.class);
         startActivity(intent);
     }
 }

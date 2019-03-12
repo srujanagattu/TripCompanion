@@ -70,6 +70,7 @@
                 android:layout_centerInParent="true"
                 android:ems="10"
                 android:inputType="textPersonName"
+                android:onClick="ThirdAct"
                 android:text="Login"
                 android:textColor="@android:color/white"
                 android:textFontWeight="500"
