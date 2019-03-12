@@ -23,7 +23,7 @@ Online Repository Link:
 https://github.com/srujanagattu/TripCompanion
 
 # Contributions of our Teammates:
-## Venkata Sai Karthik Reddy Bijjam:
+Venkata Sai Karthik Reddy Bijjam:
 Designed Login activity.
 Gopi Krishna Amara:
 	Designed Sign Up Activity
