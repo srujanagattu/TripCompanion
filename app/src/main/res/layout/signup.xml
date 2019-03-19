@@ -154,7 +154,11 @@
                 android:ems="10"
                 android:inputType="textPersonName"
                 android:onClick="GoBackToLogin"
-                android:text="Login"
+
+                android:text="Sign Up"
+
+
+
                 android:textColor="@android:color/white"
                 android:textFontWeight="500"
                 android:textSize="30dp" />
