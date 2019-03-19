@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/holo_blue_light"
     tools:context=".SignUp">
 
 
@@ -19,9 +20,10 @@
         android:ems="10"
         android:hint="@string/user_name"
         android:inputType="textPersonName"
-        android:text=" User Name"
+
         android:textSize="22dp"
-        tools:targetApi="o"/>
+        tools:targetApi="o" />
+
     <EditText
         android:id="@+id/age"
         android:layout_width="wrap_content"
@@ -29,14 +31,59 @@
         android:layout_alignBottom="@+id/name"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="15dp"
-        android:layout_marginBottom="-67dp"
-        android:drawableLeft="@drawable/username"
+        android:layout_marginBottom="-227dp"
         android:background="#DEE4E7"
+        android:drawableLeft="@drawable/username"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text=" Age"
-        android:textSize="22dp"
-        />
+        android:hint=" Age"
+        android:textSize="22dp" />
+
+
+    <EditText
+        android:id="@+id/phonenumber"
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:layout_alignBottom="@+id/gender"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="-57dp"
+        android:background="#DEE4E7"
+        android:drawableLeft="@drawable/username"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint=" Phone number"
+        android:textSize="22dp" />
+
+    <EditText
+        android:id="@+id/gender"
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:layout_alignBottom="@+id/age"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="-57dp"
+        android:background="#DEE4E7"
+        android:drawableLeft="@drawable/username"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint=" Gender"
+        android:textSize="22dp" />
+
+    <EditText
+        android:id="@+id/food"
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:layout_alignBottom="@+id/phonenumber"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="-60dp"
+        android:background="#DEE4E7"
+        android:drawableLeft="@drawable/username"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint=" Favourite Dish"
+        android:textSize="22dp" />
 
     <EditText
         android:id="@+id/email"
@@ -44,75 +91,29 @@
         android:layout_height="45dp"
         android:layout_alignBottom="@+id/name"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="15dp"
-        android:layout_marginBottom="-67dp"
-        android:drawableLeft="@drawable/username"
+        android:layout_marginBottom="-58dp"
         android:background="#DEE4E7"
+        android:drawableLeft="@drawable/username"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text=" Email"
-        android:textSize="22dp"
-        />
+        android:hint=" Email id"
+        android:textSize="22dp" />
+
     <EditText
-        android:id="@+id/phonenumber"
-        android:layout_width="wrap_content"
-        android:layout_height="45dp"
-        android:layout_alignBottom="@+id/name"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="15dp"
-        android:layout_marginBottom="-67dp"
-        android:drawableLeft="@drawable/username"
-        android:background="#DEE4E7"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text=" phonenumber"
-        android:textSize="22dp"
-        />
-    <EditText
-        android:id="@+id/gender"
+        android:id="@+id/password"
         android:layout_width="wrap_content"
         android:layout_height="45dp"
         android:layout_alignBottom="@+id/email"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="15dp"
-        android:layout_marginBottom="-67dp"
-        android:drawableLeft="@drawable/username"
+        android:layout_marginBottom="-55dp"
         android:background="#DEE4E7"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text=" Gender"
-        android:textSize="22dp"
-        />
-    <EditText
-        android:id="@+id/food"
-        android:layout_width="wrap_content"
-        android:layout_height="45dp"
-        android:layout_alignBottom="@+id/gender"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="15dp"
-        android:drawableLeft="@drawable/username"
-        android:layout_marginBottom="-67dp"
-        android:background="#DEE4E7"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text=" Favourite Dish"
-        android:textSize="22dp"
-        />
-    <EditText
-        android:id="@+id/password"
-        android:layout_width="wrap_content"
-        android:layout_height="45dp"
-        android:layout_alignBottom="@+id/food"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="15dp"
-        android:layout_marginBottom="-67dp"
         android:drawableLeft="@drawable/userpassword"
-        android:background="#DEE4E7"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text=" Password"
-        android:textSize="22dp"
-        />
+        android:hint=" Password"
+        android:textSize="22dp" />
+
     <EditText
         android:id="@+id/confrimPassword"
         android:layout_width="wrap_content"
@@ -120,21 +121,20 @@
         android:layout_alignBottom="@+id/password"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="15dp"
-        android:layout_marginBottom="-67dp"
-        android:drawableLeft="@drawable/userpassword"
+        android:layout_marginBottom="-59dp"
         android:background="#DEE4E7"
+        android:drawableLeft="@drawable/userpassword"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text=" Confrim Password"
-        android:textSize="22dp"
-        />
+        android:hint=" Confirm Password"
+        android:textSize="22dp" />
 
     <android.support.v7.widget.CardView
 
         android:id="@+id/button"
         android:layout_width="300dp"
         android:layout_height="50dp"
-        android:layout_below="@+id/confrimPassword"
+        android:layout_below="@+id/food"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="100dp"
         app:cardBackgroundColor="#37474F"
@@ -144,21 +144,23 @@
         <RelativeLayout
 
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_alignStart="@+id/button"
+
+            android:layout_alignBottom="@+id/food"
+            android:layout_centerHorizontal="true">
 
             <TextView
                 android:id="@+id/login_label"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
+                android:layout_centerHorizontal="true"
                 android:ems="10"
                 android:inputType="textPersonName"
+
                 android:onClick="GoBackToLogin"
 
                 android:text="Sign Up"
-
-
-
                 android:textColor="@android:color/white"
                 android:textFontWeight="500"
                 android:textSize="30dp" />

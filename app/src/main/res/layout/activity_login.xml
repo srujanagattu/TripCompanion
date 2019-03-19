@@ -29,7 +29,7 @@
         android:ems="10"
         android:hint="@string/user_name"
         android:inputType="textPersonName"
-        android:text=" User Name"
+
         android:textSize="22dp" />
 
     <EditText
@@ -44,7 +44,7 @@
         android:ems="10"
         android:hint="@string/password"
         android:inputType="textPersonName"
-        android:text=" Password"
+
         android:textSize="22dp" />
 
     <android.support.v7.widget.CardView
