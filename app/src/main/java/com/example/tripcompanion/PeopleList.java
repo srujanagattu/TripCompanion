@@ -11,7 +11,7 @@ public class PeopleList extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.peoplelist);
-        String[] friends={"Srujana","Dristi","Gopi","Krihsna"};
+        String[] friends={"Srujana","Dristi","Gopi","Krihsna","Dr.Hoot"};
         ListAdapter ad=new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,friends);
         ListView lv=(ListView)findViewById(R.id.listView);
         lv.setAdapter(ad);
