@@ -70,7 +70,7 @@
                 android:layout_centerInParent="true"
                 android:ems="10"
                 android:inputType="textPersonName"
-                android:onClick="ThirdAct"
+                android:onClick="GoToTripOptionsActivity"
                 android:text="Login"
                 android:textColor="@android:color/white"
                 android:textFontWeight="500"
@@ -87,7 +87,7 @@
         android:layout_below="@id/button"
         android:layout_centerInParent="true"
         android:layout_marginTop="30dp"
-        android:onClick="SignupAct"
+        android:onClick="GoToSignupActivity"
         android:text="Sign Up"
         android:textColor="@android:color/black"
 
