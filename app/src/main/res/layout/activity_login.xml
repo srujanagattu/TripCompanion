@@ -4,15 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Login"
-    android:background="@android:color/white">
+    android:background="@android:color/holo_blue_light"
+    tools:context=".Login">
+
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="350dp"
         android:layout_height="200dp"
-        app:srcCompat="@drawable/tripimage"
         android:layout_centerHorizontal="true"
-        android:contentDescription="@string/TripLogo" />
+        android:contentDescription="@string/TripLogo"
+        app:srcCompat="@drawable/tripimage" />
 
     <EditText
         android:id="@+id/username"
