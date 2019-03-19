@@ -13,6 +13,7 @@ public class Destination extends AppCompatActivity {
     }
     public void PeopleList(View v){
         Intent intent=new Intent(this,PeopleList.class);
+
         startActivity(intent);
     }
 }
