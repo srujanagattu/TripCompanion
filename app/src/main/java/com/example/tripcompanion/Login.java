@@ -28,12 +28,12 @@ public class Login extends AppCompatActivity {
         String pass = password.getText().toString();
 
         Log.d("Username", "The username and password user entered" + user +"  "+ pass);
-        if(user.equals("username") && pass.equals("password") ) {
+        if(user.equals("android") && pass.equals("android") ) {
             Intent intent=new Intent(this,TripOptions.class);
             startActivity(intent);
         } else{
 
-            Toast.makeText(getApplicationContext(),"user name = username and password = password",Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext()," Enter User name as android and Password as android",Toast.LENGTH_LONG).show();
         }
 
     }
