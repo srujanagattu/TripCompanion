@@ -19,7 +19,7 @@ public class Login extends AppCompatActivity {
     }
 
     public void GoToTripOptionsActivity(View v){
-        //Toast.makeText(getApplicationContext(),"Clicked",Toast.LENGTH_LONG).show();
+       
         EditText username;
         EditText password;
         username = (EditText) findViewById(R.id.username);
