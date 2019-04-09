@@ -37,11 +37,13 @@ public class SignUp extends AppCompatActivity {
         String location = "Kansas";
         long a = db.insert(name,gender1,mail,pwd,age1,phone,location);
         System.out.println(a);
-        Intent intent=new Intent(this,Login.class);
-        startActivity(intent);
+        if(validate()) {
+            Intent intent = new Intent(this, Login.class);
+            startActivity(intent);
+        }
 
-        Toast toast = Toast.makeText(getApplicationContext(),"Please Check Password"+pwd,Toast.LENGTH_SHORT);
-        toast.show();
+
+
     }//end of button click
 
 
@@ -52,5 +54,34 @@ public class SignUp extends AppCompatActivity {
         Toast toast = Toast.makeText(getApplicationContext(),"DB is connected",Toast.LENGTH_SHORT);
         toast.show();
     }
+public boolean validate(){
+    EditText uname = (EditText) findViewById(R.id.name);
+    EditText email = (EditText) findViewById(R.id.email);
+    EditText password = (EditText) findViewById(R.id.password);
+    EditText password1 = (EditText) findViewById(R.id.confrimPassword);
+    EditText age = (EditText) findViewById(R.id.age);
+    String age1 = age.getText().toString().trim().toLowerCase();
+    int agee=Integer.parseInt(age1);
+    String name = uname.getText().toString().trim().toLowerCase();
+    String mail = email.getText().toString().trim().toLowerCase();
+    String pwd = password.getText().toString().trim().toLowerCase();
+    String pwd1 = password1.getText().toString().trim().toLowerCase();
+    if((!name.equals("") && !mail.equals("") && !pwd.equals("")&& !pwd1.equals("")) && (pwd.equals(pwd1)) &&(agee>1 && agee<100)) {
 
+return true;
+    }else if(!pwd.equals(pwd1)){
+        Toast.makeText(getApplicationContext(),"Password doesnot match!!",Toast.LENGTH_LONG).show();
+        return false;
+    }
+    else if(!(agee>1 && agee<100)){
+        Toast.makeText(getApplicationContext(),"Enter valid age!",Toast.LENGTH_LONG).show();
+        return false;
+    }
+    else{
+
+        Toast.makeText(getApplicationContext(),"User Name, Email  and Password are required!!",Toast.LENGTH_LONG).show();
+        return false;
+    }
+
+}
 }//end of class

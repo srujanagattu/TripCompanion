@@ -31,7 +31,7 @@ public class Login extends AppCompatActivity {
         String pass = password.getText().toString().trim().toLowerCase();
 
         Log.d("Username", "The username and password user entered" + user +"  "+ pass);
-        if(!user.equals("") || !pass.equals("") ) {
+        if(!user.equals("") && !pass.equals("") ) {
 
 
             Intent intent=new Intent(this,TripOptions.class);
