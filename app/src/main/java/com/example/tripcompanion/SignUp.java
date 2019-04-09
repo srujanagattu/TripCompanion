@@ -53,7 +53,7 @@ public class SignUp extends AppCompatActivity {
             }
         else if(!(agee>1 && agee<100)){
   Toast.makeText(getApplicationContext(),"Enter valid age!",Toast.LENGTH_LONG).show();
-      
+
     }
             else {
                 Intent intent = new Intent(this, Login.class);

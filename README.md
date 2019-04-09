@@ -5,6 +5,7 @@ Venkata Sai Karthik Reddy Bijjam
 Srujana Gattu
 Dristi Marasini
 
+
 ## Problem: 
 There is no way possible that people who are travelling to the same destination gets connected and plan their travel with whomever they like and make their travel exciting. Our mobile based Android Application (TripCompanion) provides a solution as described below:
 	TripCompanion is a free travel app known for assisting travelers in finding partners for group trips and world adventures.
@@ -37,6 +38,14 @@ Dristi Marasini
  # Problems Still Exists: 
  DB connectivity is acheived using SQLHelperClass. and we are also able to Insert Records into Users table when signing up. But unable to retrieve the data from users table to validate login page for user login.
  
-
+# Contributions in Project milestone 3
+Gopi Krishna Amara:
+Database connectivity, inseting records
+Srujana Gattu
+Updated validations in signup page
+Dristi Marasini
+Updated validations in login page	
+Venkata Sai Karthik Reddy Bijjam:
+Map activity
 
 
