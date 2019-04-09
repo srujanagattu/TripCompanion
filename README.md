@@ -51,5 +51,5 @@ Map activity
 
 # Icon:
 ![alt icon](https://github.com/srujanagattu/TripCompanion/blob/master/start.png)
-# Name of our App
+# Catchy Name of our App
 Trip Companion
