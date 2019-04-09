@@ -49,3 +49,5 @@ Venkata Sai Karthik Reddy Bijjam:
 Map activity
 
 
+# Icon:
+![alt icon](https://github.com/srujanagattu/TripCompanion/blob/master/start.png)
