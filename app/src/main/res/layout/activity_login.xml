@@ -43,7 +43,7 @@
         android:drawableLeft="@drawable/userpassword"
         android:ems="10"
         android:hint="@string/password"
-        android:inputType="textPersonName"
+        android:inputType="textPassword"
 
         android:textSize="22dp" />
 

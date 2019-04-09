@@ -51,8 +51,9 @@
         android:background="#DEE4E7"
         android:drawableLeft="@drawable/username"
         android:ems="10"
-        android:inputType="textPersonName"
         android:hint=" Phone number"
+        android:inputType="textPersonName"
+        android:maxLength="12"
         android:textSize="22dp" />
 
     <EditText
@@ -110,7 +111,7 @@
         android:background="#DEE4E7"
         android:drawableLeft="@drawable/userpassword"
         android:ems="10"
-        android:inputType="textPersonName"
+        android:inputType="textPassword"
         android:hint=" Password"
         android:textSize="22dp" />
 
@@ -125,7 +126,7 @@
         android:background="#DEE4E7"
         android:drawableLeft="@drawable/userpassword"
         android:ems="10"
-        android:inputType="textPersonName"
+        android:inputType="textPassword"
         android:hint=" Confirm Password"
         android:textSize="22dp" />
 
