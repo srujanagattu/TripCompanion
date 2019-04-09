@@ -24,14 +24,14 @@ Online Repository Link:
 https://github.com/srujanagattu/TripCompanion
 
 # Contributions of our Teammates:
-Venkata Sai Karthik Reddy Bijjam:
-Designed Login activity.
-Gopi Krishna Amara:
-	Designed Sign Up Activity
-Srujana Gattu
-	Designed Destination Activity
-Dristi Marasini
-	Designed trip options activity
+
+Venkata Sai Karthik Reddy Bijjam:Designed Login activity.
+
+Gopi Krishna Amara:Designed Sign Up Activity
+
+Srujana Gattu:Designed Destination Activity
+
+Dristi Marasini:Designed trip options activity
 
  
  
@@ -39,14 +39,14 @@ Dristi Marasini
  DB connectivity is acheived using SQLHelperClass. and we are also able to Insert Records into Users table when signing up. But unable to retrieve the data from users table to validate login page for user login.
  
 # Contributions in Project milestone 3
-Gopi Krishna Amara:
-Database connectivity, inseting records
-Srujana Gattu
-Updated validations in signup page
-Dristi Marasini
-Updated validations in login page	
-Venkata Sai Karthik Reddy Bijjam:
-Map activity
+
+Gopi Krishna Amara:Database connectivity, inseting records
+
+Srujana Gattu:Updated validations in signup page
+
+Dristi Marasini:Updated validations in login page	
+
+Venkata Sai Karthik Reddy Bijjam:Map activity
 
 
 # Icon:
