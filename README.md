@@ -55,8 +55,7 @@ Venkata Sai Karthik Reddy Bijjam:Map activity
 # Catchy Name of our App
 Trip Companion
 
-# Problems Still Exists: 
- DB connectivity is acheived using SQLHelperClass. and we are also able to Insert Records into Users table when signing up. But unable to retrieve the data from users table to validate login page for user login.
+
  
 # Contributions in Project milestone 3
 
@@ -67,3 +66,6 @@ Srujana Gattu:Updated validations in signup page
 Dristi Marasini:Updated validations in login page	
 
 Venkata Sai Karthik Reddy Bijjam:Map activity
+
+# Problems Still Exists: 
+ DB connectivity is acheived using SQLHelperClass. and we are also able to Insert Records into Users table when signing up. But unable to retrieve the data from users table to validate login page for user login.
