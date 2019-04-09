@@ -31,14 +31,14 @@ public class Login extends AppCompatActivity {
         String pass = password.getText().toString().trim().toLowerCase();
 
         Log.d("Username", "The username and password user entered" + user +"  "+ pass);
-        if(user.equals("android") && pass.equals("android") ) {
+        if(!user.equals("") || !pass.equals("") ) {
 
 
             Intent intent=new Intent(this,TripOptions.class);
             startActivity(intent);
         } else{
 
-            Toast.makeText(getApplicationContext(),"Enter User name as android and password as android",Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(),"Enter User name  and password ",Toast.LENGTH_LONG).show();
         }
 
 //      Cursor cursor = db.getRecords(user);

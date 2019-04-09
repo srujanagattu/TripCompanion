@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 public class SignUp extends AppCompatActivity {
     SQLHelperClass db ;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
