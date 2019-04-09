@@ -110,7 +110,7 @@
         android:background="#DEE4E7"
         android:drawableLeft="@drawable/userpassword"
         android:ems="10"
-        android:inputType="textPersonName"
+        android:inputType="textPassword"
         android:hint=" Password"
         android:textSize="22dp" />
 
@@ -125,7 +125,7 @@
         android:background="#DEE4E7"
         android:drawableLeft="@drawable/userpassword"
         android:ems="10"
-        android:inputType="textPersonName"
+        android:inputType="textPassword"
         android:hint=" Confirm Password"
         android:textSize="22dp" />
 
