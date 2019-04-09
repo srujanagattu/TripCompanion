@@ -1,0 +1,44 @@
+{
+  "project_info": {
+    "project_number": "352426440763",
+    "firebase_url": "https://tripcompanion-336b8.firebaseio.com",
+    "project_id": "tripcompanion-336b8",
+    "storage_bucket": "tripcompanion-336b8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:352426440763:android:c45aa47e926cf18a",
+        "android_client_info": {
+          "package_name": "com.example.tripcompanion"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "352426440763-c16otq85aac0prf25f5e2betgmhb0aa5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.tripcompanion",
+            "certificate_hash": "3f316bf2e5305f739dc0e86d6bf481014ad6b0cc"
+          }
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDsQExWZFH3l_DaU51M5lpgBzZWWQOitMQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "352426440763-mj9vuggcve5upa672rcp30ed9nh9e4uf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
