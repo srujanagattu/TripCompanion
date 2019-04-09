@@ -34,7 +34,8 @@ Dristi Marasini
 
  
  
- 
+ # Problems Still Exists: 
+ DB connectivity is acheived using SQLHelperClass. and we are also able to Insert Records into Users table when signing up. But unable to retrieve the data from users table to validate login page for user login.
  
 
 
