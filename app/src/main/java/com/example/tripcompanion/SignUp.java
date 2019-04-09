@@ -1,5 +1,6 @@
 package com.example.tripcompanion;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -8,11 +9,11 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class SignUp extends AppCompatActivity {
-
-    SQLHelperClass db;
+    SQLHelperClass db ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        db = new SQLHelperClass(SignUp.this);
         setContentView(R.layout.signup);
 
     }
@@ -32,17 +33,23 @@ public class SignUp extends AppCompatActivity {
         String age1 = age.getText().toString().trim().toLowerCase();
         String gender1 = gender.getText().toString().trim().toLowerCase();
         String phone = phoneNumber.getText().toString().trim().toLowerCase();
-        String location = " ";
-        db.openDB();
+        String location = "Kansas";
+        long a = db.insert(name,gender1,mail,pwd,age1,phone,location);
+        System.out.println(a);
+        Intent intent=new Intent(this,Login.class);
+        startActivity(intent);
 
-        if(pwd.equals(pwd1)){
-           long a = db.insert(name,gender1,mail,pwd,age1,phone,location);
-           System.out.println(a);
-            Intent intent=new Intent(this,Login.class);
-            startActivity(intent);
-        }else{
-            Toast toast = Toast.makeText(getApplicationContext(),"Please Check Password",Toast.LENGTH_SHORT);
-            toast.show();
-        }//end of if else case
+        Toast toast = Toast.makeText(getApplicationContext(),"Please Check Password"+pwd,Toast.LENGTH_SHORT);
+        toast.show();
     }//end of button click
+
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        db.openDB();
+        Toast toast = Toast.makeText(getApplicationContext(),"DB is connected",Toast.LENGTH_SHORT);
+        toast.show();
+    }
+
 }//end of class
