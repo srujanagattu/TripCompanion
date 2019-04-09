@@ -34,20 +34,6 @@ Srujana Gattu:Designed Destination Activity
 Dristi Marasini:Designed trip options activity
 
  
- 
- # Problems Still Exists: 
- DB connectivity is acheived using SQLHelperClass. and we are also able to Insert Records into Users table when signing up. But unable to retrieve the data from users table to validate login page for user login.
- 
-# Contributions in Project milestone 3
-
-Gopi Krishna Amara:Database connectivity, inseting records
-
-Srujana Gattu:Updated validations in signup page
-
-Dristi Marasini:Updated validations in login page	
-
-Venkata Sai Karthik Reddy Bijjam:Map activity
-
 
 # Icon:
 ![alt icon](https://github.com/srujanagattu/TripCompanion/blob/master/start.png)
