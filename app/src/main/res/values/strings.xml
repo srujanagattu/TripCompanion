@@ -4,4 +4,8 @@
     <string name="user_name">User Name</string>
     <string name="password">Enter your password</string>
     <string name="title_activity_maps">Map</string>
+    <string name="back4app_server_url">https://parseapi.back4app.com/</string>
+    <!-- Change the following strings as required -->
+    <string name="back4app_app_id">YgQDW1lGnpZoHgqt4Qtin7kloU8XBsRFnYKmqqlj</string>
+    <string name="back4app_client_key">W83z1SHbQUKNhiRXyun1PIYmN4PBusMCTLem5KFx</string>
 </resources>

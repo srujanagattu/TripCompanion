@@ -8,6 +8,12 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
+import com.parse.Parse;
+import com.parse.ParseException;
+import com.parse.ParseObject;
+import com.parse.ParseUser;
+import com.parse.ParseInstallation;
+import com.parse.SaveCallback;
 
 public class SignUp extends AppCompatActivity {
     SQLHelperClass db;
@@ -15,7 +21,8 @@ public class SignUp extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        db = new SQLHelperClass(SignUp.this);
+        Parse.initialize(this);
+        ParseInstallation.getCurrentInstallation().saveInBackground();
         setContentView(R.layout.signup);
 
     }
@@ -28,6 +35,7 @@ public class SignUp extends AppCompatActivity {
         EditText age = (EditText) findViewById(R.id.age);
         EditText gender = (EditText) findViewById(R.id.gender);
         EditText phoneNumber = (EditText) findViewById(R.id.phonenumber);
+        EditText favrt = (EditText) findViewById(R.id.food);
 
         String name = uname.getText().toString().trim().toLowerCase();
         String mail = email.getText().toString().trim().toLowerCase();
@@ -37,9 +45,9 @@ public class SignUp extends AppCompatActivity {
         int agee = Integer.parseInt(age1);
         String gender1 = gender.getText().toString().trim().toLowerCase();
         String phone = phoneNumber.getText().toString().trim().toLowerCase();
+        String food1 = favrt.getText().toString().trim().toLowerCase();
         String location = "Kansas";
-        long a = db.insert(name, gender1, mail, pwd, age1, phone, location);
-        System.out.println(a);
+
         if (name.isEmpty() || mail.isEmpty() || pwd.isEmpty()||pwd1.isEmpty()  )
 
         {
@@ -56,8 +64,23 @@ public class SignUp extends AppCompatActivity {
 
     }
             else {
-                Intent intent = new Intent(this, Login.class);
-                startActivity(intent);
+            ParseObject trip = new ParseObject("Trip");
+            trip.put("name", name);
+            trip.put("email", mail);
+            trip.put("password", pwd);
+            trip.put("confirmPassword", pwd1);
+            trip.put("age", agee);
+            trip.put("gender", gender1);
+            trip.put("phoneNumber", phone);
+            trip.put("favouriteDish", food1);
+            trip.saveInBackground(new SaveCallback() {
+                @Override
+                public void done(ParseException e) {
+                    System.out.println("Saved Callback");
+                   gotoAnoActivity();
+                }
+            });
+
             }
 
 
@@ -76,12 +99,16 @@ public class SignUp extends AppCompatActivity {
     }//end of button click
 
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-        db.openDB();
-        Toast toast = Toast.makeText(getApplicationContext(), "DB is connected", Toast.LENGTH_SHORT);
-        toast.show();
+//    @Override
+//    protected void onStart() {
+//        super.onStart();
+//        db.openDB();
+//        Toast toast = Toast.makeText(getApplicationContext(), "DB is connected", Toast.LENGTH_SHORT);
+//        toast.show();
+//    }
+    public void gotoAnoActivity(){
+        Intent intent = new Intent(this, Login.class);
+        startActivity(intent);
     }
 
 public boolean validate() {
