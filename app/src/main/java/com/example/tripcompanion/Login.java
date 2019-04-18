@@ -109,6 +109,10 @@ if(flag==0) {
         Log.d("dfsdf","dristif"+test);
         intent.putExtra("user_id", test);
         startActivity(intent);
+
+
+
+
     }
     public void GoToSignupActivity(View v){
         Intent ini=new Intent(this,SignUp.class);

@@ -53,7 +53,7 @@ public class SignUp extends AppCompatActivity {
 
         {
 
-            Toast.makeText(getApplicationContext(),"Enter valid Name, Email and Password!",Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(),"Enter valid name, email and password!",Toast.LENGTH_LONG).show();
         }
 
         else if(!pwd.equals(pwd1)){
