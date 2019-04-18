@@ -41,7 +41,7 @@
         android:layout_width="179dp"
         android:layout_height="96dp"
         android:background="?android:attr/colorButtonNormal"
-        android:onClick="PeopleList"
+        android:onClick="myDest"
         android:text="Submit"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"

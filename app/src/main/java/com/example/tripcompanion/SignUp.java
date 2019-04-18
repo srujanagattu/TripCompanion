@@ -17,6 +17,7 @@ import com.parse.SaveCallback;
 
 public class SignUp extends AppCompatActivity {
   //  SQLHelperClass db;
+    String str;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,11 +76,14 @@ public class SignUp extends AppCompatActivity {
             trip.put("favouriteDish", food1);
             trip.put("state","");
             trip.put("city","");
+            str=ParseUser.getCurrentUser().getObjectId();
             trip.saveInBackground(new SaveCallback() {
                 @Override
                 public void done(ParseException e) {
                     System.out.println("Saved Callback");
-                   gotoAnoActivity();
+
+
+                   gotoAnoActivity(str);
                 }
             });
 
@@ -108,8 +112,9 @@ public class SignUp extends AppCompatActivity {
 //        Toast toast = Toast.makeText(getApplicationContext(), "DB is connected", Toast.LENGTH_SHORT);
 //        toast.show();
 //    }
-    public void gotoAnoActivity(){
+    public void gotoAnoActivity(String str){
         Intent intent = new Intent(this, Login.class);
+        intent.putExtra("user_id", str);
         startActivity(intent);
     }
 

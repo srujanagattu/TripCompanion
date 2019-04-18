@@ -23,10 +23,11 @@ import java.util.List;
 public class Login extends AppCompatActivity {
 
 
-    SQLHelperClass db;
+   String test;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         Parse.initialize(this);
         ParseInstallation.getCurrentInstallation().saveInBackground();
 
@@ -34,11 +35,12 @@ public class Login extends AppCompatActivity {
     }
 
     public void GoToTripOptionsActivity(View v){
-        ParseQuery<ParseObject> query = ParseQuery.getQuery("Trip");
+        final ParseQuery<ParseObject> query = ParseQuery.getQuery("Trip");
 // Fetches all the Movie objects
         query.findInBackground(new FindCallback<ParseObject>() {
             @Override
             public void done(List<ParseObject> tripList, ParseException e) {
+
                 String userName;
                 String password;
                 if (e == null) {
@@ -56,7 +58,8 @@ public class Login extends AppCompatActivity {
 
                         Log.d("Username", "The username and password user entered" + user +"  "+ pass);
                         if(user.equals(userName) && pass.equals(password) ) {
-
+test=tripList.get(i).getObjectId();
+Log.d("dfsdf","dsfsdf"+test);
                             GoToTripActivity();
 
                         } else{
@@ -89,6 +92,8 @@ public class Login extends AppCompatActivity {
     }//end of login method
     public void GoToTripActivity(){
         Intent intent=new Intent(this,TripOptions.class);
+        Log.d("dfsdf","dristif"+test);
+        intent.putExtra("user_id", test);
         startActivity(intent);
     }
     public void GoToSignupActivity(View v){
