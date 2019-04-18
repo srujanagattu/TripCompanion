@@ -16,7 +16,7 @@ import com.parse.ParseInstallation;
 import com.parse.SaveCallback;
 
 public class SignUp extends AppCompatActivity {
-    SQLHelperClass db;
+  //  SQLHelperClass db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,6 +73,8 @@ public class SignUp extends AppCompatActivity {
             trip.put("gender", gender1);
             trip.put("phoneNumber", phone);
             trip.put("favouriteDish", food1);
+            trip.put("state","");
+            trip.put("city","");
             trip.saveInBackground(new SaveCallback() {
                 @Override
                 public void done(ParseException e) {

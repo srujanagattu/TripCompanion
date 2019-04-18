@@ -16,7 +16,7 @@ public class Destination extends AppCompatActivity {
     }
     public void PeopleList(View v){
         Intent intent=new Intent(this,PeopleList.class);
-ed=(EditText) findViewById(R.id.editText);
+ed=(EditText) findViewById(R.id.editText3);
 String str=ed.getText().toString();
 intent.putExtra("placeName",str);
         startActivity(intent);
