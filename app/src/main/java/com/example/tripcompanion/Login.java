@@ -21,8 +21,8 @@ import com.parse.ParseInstallation;
 import java.util.List;
 
 public class Login extends AppCompatActivity {
-
-
+int flag=0;
+    Toast toast;
    String test;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +33,17 @@ public class Login extends AppCompatActivity {
 
         setContentView(R.layout.activity_login);
     }
-
+    public void displayToast(String message) {
+        if(toast != null)
+            toast.cancel();
+        toast = Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT);
+        toast.show();
+    }
+    protected void onPause() {
+        if(toast != null)
+            toast.cancel();
+        super.onPause();
+    }
     public void GoToTripOptionsActivity(View v){
         final ParseQuery<ParseObject> query = ParseQuery.getQuery("Trip");
 // Fetches all the Movie objects
@@ -60,11 +70,13 @@ public class Login extends AppCompatActivity {
                         if(user.equals(userName) && pass.equals(password) ) {
 test=tripList.get(i).getObjectId();
 Log.d("dfsdf","dsfsdf"+test);
+onPause();
                             GoToTripActivity();
 
                         } else{
-
-                            Toast.makeText(getApplicationContext(),"Enter correct User name  and password  ",Toast.LENGTH_LONG).show();
+if(flag==0) {
+    displayToast("Enter correct User name  and password  ");
+}
                         }
                     }
                 } else {
@@ -91,6 +103,8 @@ Log.d("dfsdf","dsfsdf"+test);
 
     }//end of login method
     public void GoToTripActivity(){
+        onPause();
+        flag=1;
         Intent intent=new Intent(this,TripOptions.class);
         Log.d("dfsdf","dristif"+test);
         intent.putExtra("user_id", test);
