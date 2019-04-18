@@ -75,7 +75,7 @@ onPause();
 
                         } else{
 if(flag==0) {
-    displayToast("Enter correct User name  and password  ");
+    displayToast("Please enter correct details!");
 }
                         }
                     }
