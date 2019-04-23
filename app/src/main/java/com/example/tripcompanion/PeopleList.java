@@ -35,9 +35,11 @@ public class PeopleList extends AppCompatActivity {
 
 //        String[] friends2={"Gopi","Krihsna","Dr.Hoot"};
 
-
+         ListView lv ;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.peoplelist);
+        lv = (ListView) findViewById(R.id.listView);
+
         Intent ini=getIntent();
         test=ini.getStringExtra("user_id");
         Parse.initialize(this);
