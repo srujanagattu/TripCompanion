@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.support.v7.widget.Toolbar;
 
 import com.parse.GetCallback;
 import com.parse.ParseException;
@@ -20,6 +21,8 @@ String test;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.destination);
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
     }
 //    public void PeopleList(View v){

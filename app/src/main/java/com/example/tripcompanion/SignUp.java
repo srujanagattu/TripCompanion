@@ -7,6 +7,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 import com.parse.Parse;
 import com.parse.ParseException;
@@ -17,14 +19,19 @@ import com.parse.SaveCallback;
 
 public class SignUp extends AppCompatActivity {
   //  SQLHelperClass db;
+    RadioGroup radiogroup;
+    RadioButton radiobutton;
     String str;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         Parse.initialize(this);
         ParseInstallation.getCurrentInstallation().saveInBackground();
         setContentView(R.layout.signup);
+        radiogroup = findViewById(R.id.RadioGroup);
+
 
     }
 
@@ -34,7 +41,7 @@ public class SignUp extends AppCompatActivity {
         EditText password = (EditText) findViewById(R.id.password);
         EditText password1 = (EditText) findViewById(R.id.confrimPassword);
         EditText age = (EditText) findViewById(R.id.age);
-        EditText gender = (EditText) findViewById(R.id.gender);
+        //EditText gender = (EditText) findViewById(R.id.gender);
         EditText phoneNumber = (EditText) findViewById(R.id.phonenumber);
         EditText favrt = (EditText) findViewById(R.id.food);
 
@@ -44,7 +51,7 @@ public class SignUp extends AppCompatActivity {
         String pwd1 = password1.getText().toString().trim().toLowerCase();
         String age1 = age.getText().toString().trim().toLowerCase();
         int agee = Integer.parseInt(age1);
-        String gender1 = gender.getText().toString().trim().toLowerCase();
+        //String gender1 = gender.getText().toString().trim().toLowerCase();
         String phone = phoneNumber.getText().toString().trim().toLowerCase();
         String food1 = favrt.getText().toString().trim().toLowerCase();
         String location = "Kansas";
@@ -71,7 +78,7 @@ public class SignUp extends AppCompatActivity {
             trip.put("password", pwd);
             trip.put("confirmPassword", pwd1);
             trip.put("age", agee);
-            trip.put("gender", gender1);
+            //trip.put("gender", gender1);
             trip.put("phoneNumber", phone);
             trip.put("favouriteDish", food1);
             trip.put("state","");
@@ -155,4 +162,10 @@ public boolean validate() {
 //
 //
 //    }//end of class
+    public void checkButton(View v){
+        int radioId = radiogroup.getCheckedRadioButtonId();
+        radiobutton = findViewById(radioId);
+        Toast.makeText(this, radiobutton.getText()+" selected", Toast.LENGTH_SHORT).show();
+    }
+
 }

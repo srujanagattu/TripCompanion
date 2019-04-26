@@ -1,86 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/holo_blue_light">
+    <include
+        android:id="@id/toolbar"
+        layout="@layout/toolbar"/>
 
-    <EditText
-        android:id="@+id/editText"
-        android:layout_width="240dp"
-        android:layout_height="76dp"
-        android:ems="10"
-        android:hint="Ex: Missouri"
-        android:inputType="textPersonName"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.409"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.2" />
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="40dp"
+        android:layout_centerVertical="true">
 
-    <EditText
-        android:id="@+id/editText3"
-        android:layout_width="240dp"
-        android:layout_height="76dp"
-        android:ems="10"
-        android:hint="Ex: Kansas"
-        android:inputType="textPersonName"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.409"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.499" />
+        <EditText
+            android:id="@+id/editText"
+            android:layout_width="240dp"
+            android:layout_height="76dp"
+            android:ems="10"
+            android:hint="Ex: Missouri"
+            android:inputType="textPersonName"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.409"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.2" />
 
-    <Button
-        android:id="@+id/submit_btn"
-        android:layout_width="179dp"
-        android:layout_height="96dp"
-        android:background="?android:attr/colorButtonNormal"
-        android:onClick="myDest"
-        android:text="Submit"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.692" />
+        <EditText
+            android:id="@+id/editText3"
+            android:layout_width="240dp"
+            android:layout_height="76dp"
+            android:ems="10"
+            android:hint="Ex: Kansas"
+            android:inputType="textPersonName"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.409"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.499" />
 
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="236dp"
-        android:layout_height="56dp"
-        android:text="Enter State"
-        android:textAlignment="center"
-        android:textColor="@color/common_google_signin_btn_text_dark_focused"
-        android:textSize="36sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.424"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.065" />
+        <Button
+            android:id="@+id/submit_btn"
+            android:layout_width="179dp"
+            android:layout_height="96dp"
+            android:background="?android:attr/colorButtonNormal"
+            android:onClick="myDest"
+            android:text="Submit"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.692" />
 
-    <TextView
-        android:id="@+id/textView7"
-        android:layout_width="236dp"
-        android:layout_height="56dp"
-        android:text="Enter City"
-        android:textAlignment="center"
-        android:textColor="@color/common_google_signin_btn_text_dark_focused"
-        android:textSize="36sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.4"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.354" />
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="236dp"
+            android:layout_height="56dp"
+            android:text="Enter State"
+            android:textAlignment="center"
+            android:textColor="@color/common_google_signin_btn_text_dark_focused"
+            android:textSize="36sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.424"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.065" />
 
-</android.support.constraint.ConstraintLayout>
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="236dp"
+            android:layout_height="56dp"
+            android:text="Enter City"
+            android:textAlignment="center"
+            android:textColor="@color/common_google_signin_btn_text_dark_focused"
+            android:textSize="36sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.354" />
+    </android.support.constraint.ConstraintLayout>
+
+</RelativeLayout>
