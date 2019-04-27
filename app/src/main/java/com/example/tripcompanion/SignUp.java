@@ -21,7 +21,7 @@ public class SignUp extends AppCompatActivity {
   //  SQLHelperClass db;
     RadioGroup radiogroup;
     RadioButton radiobutton;
-    String str;
+String gen;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,12 +30,13 @@ public class SignUp extends AppCompatActivity {
         Parse.initialize(this);
         ParseInstallation.getCurrentInstallation().saveInBackground();
         setContentView(R.layout.signup);
-        radiogroup = findViewById(R.id.RadioGroup);
+
 
 
     }
 
     public void GoBackToLogin(View v) {
+
         EditText uname = (EditText) findViewById(R.id.name);
         EditText email = (EditText) findViewById(R.id.email);
         EditText password = (EditText) findViewById(R.id.password);
@@ -51,7 +52,7 @@ public class SignUp extends AppCompatActivity {
         String pwd1 = password1.getText().toString().trim().toLowerCase();
         String age1 = age.getText().toString().trim().toLowerCase();
         int agee = Integer.parseInt(age1);
-        //String gender1 = gender.getText().toString().trim().toLowerCase();
+       // String gender= radiobuttonn.getText().toString().trim().toLowerCase();
         String phone = phoneNumber.getText().toString().trim().toLowerCase();
         String food1 = favrt.getText().toString().trim().toLowerCase();
         String location = "Kansas";
@@ -78,19 +79,19 @@ public class SignUp extends AppCompatActivity {
             trip.put("password", pwd);
             trip.put("confirmPassword", pwd1);
             trip.put("age", agee);
-            //trip.put("gender", gender1);
+            trip.put("gender", gen);
             trip.put("phoneNumber", phone);
             trip.put("favouriteDish", food1);
             trip.put("state","");
             trip.put("city","");
-            str=ParseUser.getCurrentUser().getObjectId();
+           // str=ParseUser.getCurrentUser().getObjectId();
             trip.saveInBackground(new SaveCallback() {
                 @Override
                 public void done(ParseException e) {
                     System.out.println("Saved Callback");
 
 
-                   gotoAnoActivity(str);
+                   gotoAnoActivity();
                 }
             });
 
@@ -119,10 +120,11 @@ public class SignUp extends AppCompatActivity {
 //        Toast toast = Toast.makeText(getApplicationContext(), "DB is connected", Toast.LENGTH_SHORT);
 //        toast.show();
 //    }
-    public void gotoAnoActivity(String str){
+    public void gotoAnoActivity(){
         Intent intent = new Intent(this, Login.class);
-        intent.putExtra("user_id", str);
+
         startActivity(intent);
+        Log.d("saved","ad");
     }
 
 public boolean validate() {
@@ -163,8 +165,10 @@ public boolean validate() {
 //
 //    }//end of class
     public void checkButton(View v){
+        radiogroup = findViewById(R.id.RadioGroup);
         int radioId = radiogroup.getCheckedRadioButtonId();
         radiobutton = findViewById(radioId);
+        gen=radiobutton.getText().toString();
         Toast.makeText(this, radiobutton.getText()+" selected", Toast.LENGTH_SHORT).show();
     }
 
