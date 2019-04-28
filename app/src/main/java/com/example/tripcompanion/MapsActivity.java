@@ -1,8 +1,12 @@
 package com.example.tripcompanion;
 
+import android.content.pm.PackageManager;
+import android.location.Location;
 import android.location.LocationListener;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 
@@ -14,13 +18,23 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
+import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.location.LocationServices;
+import com.google.android.gms.tasks.OnSuccessListener;
 
+import static android.Manifest.permission.ACCESS_COARSE_LOCATION;
+import static android.Manifest.permission.ACCESS_FINE_LOCATION;
+
+public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
+    private FusedLocationProviderClient mClient;
     private GoogleMap mMap;
     EditText e1;
     //LocationRequest request;
     LatLng latLngCurrent;
     GoogleApiClient client;
+    double longitude;
+    double latitude;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +46,31 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+        requestPermission();
+        mClient = LocationServices.getFusedLocationProviderClient(this);
+
+        if (ActivityCompat.checkSelfPermission(MapsActivity.this, ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED ) {
+
+            return;
+        }
+        mClient.getLastLocation().addOnSuccessListener(MapsActivity.this, new OnSuccessListener<Location>() {
+            @Override
+            public void onSuccess(Location location) {
+                if(location!= null){
+                    //TextView textView = findViewById(R.id.textlocation);
+                    latitude = location.getLatitude();
+                    longitude = location.getLongitude();
+
+                    Log.d("location", location.toString());
+                    Log.d("location latitude", String.valueOf(location.getLatitude()));
+                    Log.d("location longitude", String.valueOf(location.getLongitude()));
+                    //textView.setText(location.toString());
+                }
+            }
+        });
     }
+
+
 
    /* public void findRestaurents(View v){
       StringBuilder stringBuilder = new StringBuilder("https://maps.googleapis.com/maps/api/place/nearbysearch?json?");
@@ -66,12 +104,16 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         googleMap.getUiSettings().setZoomGesturesEnabled(true);
 
         // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(-34, 151);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+        LatLng Maryville = new LatLng(latitude, longitude);
+        mMap.addMarker(new MarkerOptions().position(Maryville).title("Your Location"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(Maryville));
 
-        // Add sample location marker
+        //Add sample location marker
         //final LatLng TutorialsPoint = new LatLng(21 , 57);
         //mMap.addMarker(new MarkerOptions().position(TutorialsPoint).title("TutorialsPoint"));
+    }
+    private void requestPermission(){
+        ActivityCompat.requestPermissions(this, new String[]{ACCESS_FINE_LOCATION},1);
+        ActivityCompat.requestPermissions(this, new String[]{ACCESS_COARSE_LOCATION},1);
     }
 }
