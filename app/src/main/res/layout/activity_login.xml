@@ -9,11 +9,11 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="350dp"
-        android:layout_height="200dp"
+        android:layout_width="500dp"
+        android:layout_height="300dp"
         android:layout_centerHorizontal="true"
         android:contentDescription="@string/TripLogo"
-        app:srcCompat="@drawable/tripimage" />
+        app:srcCompat="@drawable/logo_transparent" />
 
     <EditText
         android:id="@+id/username"
