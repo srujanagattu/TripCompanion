@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
     public void secondAct(View v){
-        Intent intent=new Intent(this,TripOptions.class);
+        Intent intent=new Intent(this,Login.class);
         startActivity(intent);
     }
 
