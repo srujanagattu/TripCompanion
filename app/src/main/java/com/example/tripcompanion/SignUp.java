@@ -31,13 +31,12 @@ String gen;
         ParseInstallation.getCurrentInstallation().saveInBackground();
         setContentView(R.layout.signup);
 
-
-
     }
 
     public void GoBackToLogin(View v) {
 
         EditText uname = (EditText) findViewById(R.id.name);
+
         EditText email = (EditText) findViewById(R.id.email);
         EditText password = (EditText) findViewById(R.id.password);
         EditText password1 = (EditText) findViewById(R.id.confrimPassword);
@@ -48,8 +47,8 @@ String gen;
 
         String name = uname.getText().toString().trim().toLowerCase();
         String mail = email.getText().toString().trim().toLowerCase();
-        String pwd = password.getText().toString().trim().toLowerCase();
-        String pwd1 = password1.getText().toString().trim().toLowerCase();
+        String pwd = password.getText().toString().trim();
+        String pwd1 = password1.getText().toString().trim();
         String age1 = age.getText().toString().trim().toLowerCase();
         int agee = Integer.parseInt(age1);
        // String gender= radiobuttonn.getText().toString().trim().toLowerCase();
@@ -57,21 +56,25 @@ String gen;
         String food1 = favrt.getText().toString().trim().toLowerCase();
         String location = "Kansas";
 
-        if (name.isEmpty() || mail.isEmpty() || pwd.isEmpty()||pwd1.isEmpty()  )
-
+        if (name.isEmpty() || pwd.isEmpty()||pwd1.isEmpty() || age1.isEmpty() || phone.isEmpty() || food1.isEmpty()  )
         {
-
-            Toast.makeText(getApplicationContext(),"Enter valid name, email and password!",Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(),"Name, Email, Password, Age, Phone, Food should not be empty!",Toast.LENGTH_LONG).show();
         }
-
+        else if(!isValidEmail(mail)){
+            Toast.makeText(getApplicationContext(),"Enter valid email Address!",Toast.LENGTH_LONG).show();
+        }
+        else if(!isValidPassword(pwd)){
+            Toast.makeText(getApplicationContext(),"Password must be At least eight characters," +
+                    " at least one digit, one uppercase and lower characters," +
+                    " one special character" +
+                    " does not contain space,tab space",Toast.LENGTH_LONG).show();
+        }
         else if(!pwd.equals(pwd1)){
-
                 Toast.makeText(getApplicationContext(),"Passwords doesnot match!",Toast.LENGTH_LONG).show();
             }
         else if(!(agee>1 && agee<100)){
-  Toast.makeText(getApplicationContext(),"Enter valid age!",Toast.LENGTH_LONG).show();
-
-    }
+            Toast.makeText(getApplicationContext(),"Enter valid age!",Toast.LENGTH_LONG).show();
+         }
             else {
             ParseObject trip = new ParseObject("Trip");
             trip.put("name", name);
@@ -171,5 +174,15 @@ public boolean validate() {
         gen=radiobutton.getText().toString();
         Toast.makeText(this, radiobutton.getText()+" selected", Toast.LENGTH_SHORT).show();
     }
+    static boolean isValidEmail(String email) {
+        String regex = "^[\\w-_\\.+]*[\\w-_\\.]\\@([\\w]+\\.)+[\\w]+[\\w]$";
+        return email.matches(regex);
+    }
+    static boolean isValidPassword(String password) {
+        String regex = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{8,}$";
+        return password.matches(regex);
+    }
+
+
 
 }
