@@ -124,11 +124,11 @@ fTv.setText(favrouiteFood);
     }
 
 
-//        public void dialAction(View v){
-//
-//        Intent dial=new Intent(Intent.ACTION_DIAL);
-//        dial.setData(Uri.parse(phoneNumber));
-//        startActivity(dial);
-//    }
+        public void dialAction(View v){
+
+        Intent dial=new Intent(Intent.ACTION_DIAL);
+        dial.setData(Uri.parse("tel:"+phoneNumber));
+        startActivity(dial);
+    }
 }
 
