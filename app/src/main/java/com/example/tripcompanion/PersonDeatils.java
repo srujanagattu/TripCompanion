@@ -62,6 +62,11 @@ public class PersonDeatils extends AppCompatActivity {
             case R.id.account:
                 Toast.makeText(getApplicationContext(),"Account item is selected",Toast.LENGTH_SHORT).show();
                 return true;
+            case R.id.logout:
+                Intent intent1 = new Intent(this, Login.class);
+
+                startActivity(intent1);
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
 
