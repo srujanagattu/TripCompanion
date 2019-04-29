@@ -23,6 +23,7 @@ public class OnPoiClickActivity extends FragmentActivity
         mapFragment.getMapAsync(this);
     }
 
+
     @Override
     public void onMapReady(GoogleMap map) {
         map.setOnPoiClickListener(this);

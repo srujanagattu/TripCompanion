@@ -3,7 +3,11 @@ package com.example.tripcompanion;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -43,6 +47,8 @@ public class PeopleList extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.peoplelist);
         lv = (ListView) findViewById(R.id.listView);
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
         Intent ini=getIntent();
         test=ini.getStringExtra("user_id");
@@ -66,6 +72,24 @@ public class PeopleList extends AppCompatActivity {
 //       }
 //
     }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu){
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_tripcompanion,menu);
+        return true;
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        switch(item.getItemId()){
+            case R.id.account:
+                Toast.makeText(getApplicationContext(),"Account item is selected",Toast.LENGTH_SHORT).show();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+
+        }
+    }
+
     public void getObValue(){
         ParseQuery<ParseObject> query = ParseQuery.getQuery("Trip");
         Log.d("kk","err"+test);

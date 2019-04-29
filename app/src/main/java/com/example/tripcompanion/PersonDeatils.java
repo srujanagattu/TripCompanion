@@ -3,9 +3,14 @@ package com.example.tripcompanion;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.parse.GetCallback;
 import com.parse.Parse;
@@ -32,7 +37,8 @@ public class PersonDeatils extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.persondeatils);
-
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
         Intent ini=getIntent();
         objId=ini.getStringExtra("objectId");
@@ -42,6 +48,23 @@ public class PersonDeatils extends AppCompatActivity {
         ParseInstallation.getCurrentInstallation().saveInBackground();
        getPeopleValue();
 
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu){
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_tripcompanion,menu);
+        return true;
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        switch(item.getItemId()){
+            case R.id.account:
+                Toast.makeText(getApplicationContext(),"Account item is selected",Toast.LENGTH_SHORT).show();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+
+        }
     }
 
 
