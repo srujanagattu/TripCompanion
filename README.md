@@ -45,7 +45,7 @@ Trip Companion
  
 # Contributions in Project milestone 3
 
-Gopi Krishna Amara:Database connectivity, inseting records
+Gopi Krishna Amara:Database connectivity, inserting records
 
 Srujana Gattu:Updated validations in signup page
 
@@ -53,5 +53,9 @@ Dristi Marasini:Updated validations in login page
 
 Venkata Sai Karthik Reddy Bijjam:Map activity
 
-# Problems Still Exists: 
- DB connectivity is acheived using SQLHelperClass. and we are also able to Insert Records into Users table when signing up. But unable to retrieve the data from users table to validate login page for user login.
+# Problems Faced: 
+ First we used SQLHelper Class and was stuck while fetching records because of cursor error and then DB connectivity is acheived using Back4app and we are also able to Insert Records into Users table when signing up. Also fetching the records when searching with a specific city and state.
+
+ ## Credentials to login to our TripCompanion App
+ - Username : dristi
+ - Passwod : dristi123
