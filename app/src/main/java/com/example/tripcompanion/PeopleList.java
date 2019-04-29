@@ -132,6 +132,10 @@ public class PeopleList extends AppCompatActivity {
                         st=(String)tripList.get(i).get("state");
                         newOb=tripList.get(i).getObjectId();
                         Log.d("Parse", "obj retrieved:" +newOb);
+                        Log.d("Parse", "city retrieved:" +city);
+                        Log.d("Parse", "new city retrieved:" +ct);
+                        Log.d("Parse", "state retrieved:" +state);
+                        Log.d("Parse", "new state retrieved:" +st);
 
                         if(city.equals(ct) && state.equals(st) ) {
                             String name= (String)tripList.get(i).get("name");

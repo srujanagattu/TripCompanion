@@ -8,13 +8,12 @@
     tools:context=".Login">
 
     <ImageView
-        android:layout_marginTop="10dp"
         android:id="@+id/imageView"
-        android:layout_width="500dp"
-        android:layout_height="300dp"
+        android:layout_width="350dp"
+        android:layout_height="200dp"
         android:layout_centerHorizontal="true"
         android:contentDescription="@string/TripLogo"
-        app:srcCompat="@drawable/logo_transparent" />
+        app:srcCompat="@drawable/tripimage" />
 
     <EditText
         android:id="@+id/username"
@@ -30,9 +29,8 @@
         android:ems="10"
         android:hint="@string/user_name"
         android:inputType="textPersonName"
+
         android:textSize="22dp" />
-
-
 
     <EditText
         android:id="@+id/password"
@@ -82,26 +80,12 @@
         </RelativeLayout>
 
     </android.support.v7.widget.CardView>
-    <TextView
-        android:id="@+id/forget_password"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:ems="10"
-        android:layout_below="@+id/button"
-        android:layout_marginTop="10dp"
-        android:inputType="textPersonName"
-        android:text="     Forget Password"
-        android:textColor="@android:color/white"
-        android:textFontWeight="500"
-        android:textSize="30dp"
-        />
 
     <Button
         android:id="@+id/btn1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/forget_password"
+        android:layout_below="@id/button"
         android:layout_centerInParent="true"
         android:layout_marginTop="30dp"
         android:onClick="GoToSignupActivity"
