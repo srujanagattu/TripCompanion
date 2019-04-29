@@ -31,6 +31,7 @@ public class PersonDeatils extends AppCompatActivity {
     TextView ageTv;
     TextView fTv;
     TextView phoneTv;
+    TextView nameTx;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +43,7 @@ public class PersonDeatils extends AppCompatActivity {
 
         Intent ini=getIntent();
         objId=ini.getStringExtra("objectId");
-        name=ini.getStringExtra("NAME");
+       // name=ini.getStringExtra("NAME");
 
         Parse.initialize(this);
         ParseInstallation.getCurrentInstallation().saveInBackground();
@@ -71,14 +72,14 @@ public class PersonDeatils extends AppCompatActivity {
     public void getPeopleValue(){
 
 
-        TextView nameTx=findViewById(R.id.namevalTv2);
+         nameTx=findViewById(R.id.namevalTv2);
          gen=findViewById(R.id.genderTv5);
          emaill=findViewById(R.id.emailValTv);
          ageTv=findViewById(R.id.ageValTv4);
          phoneTv=findViewById(R.id.phValTv7);
          fTv=findViewById(R.id.foodValTv6);
 
-        nameTx.setText(name);
+
         ParseQuery<ParseObject> query = ParseQuery.getQuery("Trip");
 
         Log.d("value","object  Id:"+objId);
@@ -88,7 +89,7 @@ public class PersonDeatils extends AppCompatActivity {
             @Override
             public void done(ParseObject ob, com.parse.ParseException e) {
                 if (e == null) {
-
+name=ob.getString("name");
                    gender=ob.getString("gender");
                    age=ob.getInt("age");
                    String age1=Integer.toString(age);
@@ -103,6 +104,7 @@ emaill.setText(email);
 ageTv.setText(age1);
 phoneTv.setText(phoneNumber);
 fTv.setText(favrouiteFood);
+                    nameTx.setText(name);
 
 
 

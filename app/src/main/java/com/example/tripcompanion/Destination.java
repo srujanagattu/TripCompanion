@@ -40,6 +40,13 @@ String test;
     public boolean onOptionsItemSelected(MenuItem item){
         switch(item.getItemId()){
             case R.id.account:
+                Intent ini=getIntent();
+                test=ini.getStringExtra("user_id");
+                Intent intent = new Intent(this, PersonDeatils.class);
+                Log.d("df","test id"+test);
+
+                intent.putExtra("objectId",test);
+                startActivity(intent);
                 Toast.makeText(getApplicationContext(),"Account item is selected",Toast.LENGTH_SHORT).show();
                 return true;
              default:
