@@ -24,7 +24,7 @@
         android:id="@+id/button2"
         android:layout_width="206dp"
         android:layout_height="168dp"
-        android:background="@drawable/takeoff"
+        android:background="@drawable/start"
         android:onClick="secondAct"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
