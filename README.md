@@ -6,8 +6,11 @@
 
 # Team Members:
 Gopi Krishna Amara
+
 Venkata Sai Karthik Reddy Bijjam
+
 Srujana Gattu
+
 Dristi Marasini
 
 
@@ -31,30 +34,39 @@ https://github.com/srujanagattu/TripCompanion
 # Supported version
 
 Minimum API Level required to run our app
+
 minSdkVersion 21
+
 API level used to test the app.
+
 targetSdkVersion 28
 
 # .apk file
 
 We have generated .apk file 
+
 Path : TripCompanion\app\build\outputs\apk\debug\app-debug.apk
 
 # Installation steps for the user
 
  Clone our repo 
+ 
  Open in Android Studio
+ 
  Run on any AVD or GVD
 
 # Requirements
 
  Android Studio 
+ 
  For backend - Back4app
 
-# Sources used for your project
+# Sources used for our project
 
 https://developer.android.com/reference/android/widget/ListView
+
 https://www.youtube.com/
+
 https://www.back4app.com/docs/android/parse-sdk
 
 # Credentials to login to our TripCompanion App
