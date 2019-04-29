@@ -18,13 +18,11 @@ Dristi Marasini
 There is no way possible that people who are travelling to the same destination gets connected and plan their travel with whomever they like and make their travel exciting. Our mobile based Android Application (TripCompanion) provides a solution as described below:
 1.	TripCompanion is a free travel app known for assisting travelers in finding partners for group trips and world adventures.
 2.	It lets you find all the people who are travelling to the same destination after you provide you information.
-3.	It shows hobbies, age and gender of all the persons who are travelling to the same destination
-4.	You can notify any person that you want to be a companion in his/her travel from the list.
-5.	Once they express their interest then you will see the interested companions list in your app.
-6.	The app will let you contact the person by either text or voice call.
-7.	It also helps you finding Restaurants, public washrooms, dump-stations, accommodation, rubbish bins, local travel tips and more using GPS.
-8.	The app collects data from official sources, and also crowd sources new locations; once approved, these are added to the app.
-9.	It also helps you find different various modes of transportation available from one place to another.
+3.	It shows name,email,age, phone number, favourite dish of all the persons who are travelling to the same destination
+4.	You can call any person by clicking dail button that you want to be a companion in his/her travel from the list.
+5.	 The app will let you contact the person by voice call.
+6.	It also helps you finding Restaurants, public washrooms, dump-stations, accommodation, rubbish bins, local travel tips and more using GPS.
+7.	The app collects data from official sources, and also crowd sources new locations; once approved, these are added to the app.
 ## Risky components:
 *	Google API in this project 
 *	Uses Cloud database
