@@ -10,8 +10,6 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.EditText;
-import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,7 +19,7 @@ import com.parse.ParseInstallation;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
 
-public class PersonDeatils extends AppCompatActivity {
+public class UserDetails extends AppCompatActivity {
     String name;
     String email;
     int age;
@@ -35,23 +33,22 @@ public class PersonDeatils extends AppCompatActivity {
     TextView fTv;
     TextView phoneTv;
     TextView nameTx;
-String test;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.persondeatils);
+        setContentView(R.layout.userdetails);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         Intent ini=getIntent();
         objId=ini.getStringExtra("objectId");
-        test=ini.getStringExtra("user_id");
-       // name=ini.getStringExtra("NAME");
+        // name=ini.getStringExtra("NAME");
 
         Parse.initialize(this);
         ParseInstallation.getCurrentInstallation().saveInBackground();
-       getPeopleValue();
+        getPeopleValue();
 
     }
     @Override
@@ -65,7 +62,7 @@ String test;
         switch(item.getItemId()){
             case R.id.account:
                 Intent ini=getIntent();
-              String test1=ini.getStringExtra("user_id");
+                String test1=ini.getStringExtra("user_id");
                 Intent intent = new Intent(this, UserDetails.class);
                 Log.d("df","test id"+test1);
 
@@ -80,7 +77,7 @@ String test;
                 return true;
             case R.id.friend:
                 Intent intent2 = new Intent(this, friend.class);
-                intent2.putExtra("objectId",test);
+                intent2.putExtra("objectId",objId);
                 startActivity(intent2);
                 Toast.makeText(getApplicationContext(),"Friend item is selected",Toast.LENGTH_SHORT).show();
 
@@ -95,12 +92,12 @@ String test;
     public void getPeopleValue(){
 
 
-         nameTx=findViewById(R.id.namevalTv2);
-         gen=findViewById(R.id.genderTv5);
-         emaill=findViewById(R.id.emailValTv);
-         ageTv=findViewById(R.id.ageValTv4);
-         phoneTv=findViewById(R.id.phValTv7);
-         fTv=findViewById(R.id.foodValTv6);
+        nameTx=findViewById(R.id.namevalTv2);
+        gen=findViewById(R.id.genderTv5);
+        emaill=findViewById(R.id.emailValTv);
+        ageTv=findViewById(R.id.ageValTv4);
+        phoneTv=findViewById(R.id.phValTv7);
+        fTv=findViewById(R.id.foodValTv6);
 
 
         ParseQuery<ParseObject> query = ParseQuery.getQuery("Trip");
@@ -112,21 +109,21 @@ String test;
             @Override
             public void done(ParseObject ob, com.parse.ParseException e) {
                 if (e == null) {
-name=ob.getString("name");
-                   gender=ob.getString("gender");
-                   age=ob.getInt("age");
-                   String age1=Integer.toString(age);
-                   email=ob.getString("email");
-                   phoneNumber=ob.getString("phoneNumber");
+                    name=ob.getString("name");
+                    gender=ob.getString("gender");
+                    age=ob.getInt("age");
+                    String age1=Integer.toString(age);
+                    email=ob.getString("email");
+                    phoneNumber=ob.getString("phoneNumber");
                     favrouiteFood=ob.getString("favouriteDish");
-                   // state=ob.getString("state");
+                    // state=ob.getString("state");
                     Log.d("Gender","dsf"+gender);
                     Log.d("age","dsf"+age);
                     gen.setText(gender);
-emaill.setText(email);
-ageTv.setText(age1);
-phoneTv.setText(phoneNumber);
-fTv.setText(favrouiteFood);
+                    emaill.setText(email);
+                    ageTv.setText(age1);
+                    phoneTv.setText(phoneNumber);
+                    fTv.setText(favrouiteFood);
                     nameTx.setText(name);
 
 
@@ -140,39 +137,6 @@ fTv.setText(favrouiteFood);
     }
 
 
-        public void dialAction(View v){
-
-        Intent dial=new Intent(Intent.ACTION_DIAL);
-        dial.setData(Uri.parse("tel:"+phoneNumber));
-        startActivity(dial);
-    }
-
-    public void addFriend(View v){
-        Toast.makeText(getApplicationContext(),"Added New Friend: "+name,Toast.LENGTH_SHORT).show();
-
-        ParseQuery<ParseObject> query = ParseQuery.getQuery("Trip");
-        Log.d("jnsjdjzsn","err"+objId);
-
-        query.whereEqualTo("objectId",objId);
-        query.getInBackground(objId, new GetCallback<ParseObject>() {
-            @Override
-            public void done(ParseObject ob, com.parse.ParseException e) {
-                if (e == null) {
-
-
-                    ob.put("mapObjId",test);
-
-
-                    ob.saveInBackground();
-                    Toast.makeText(getApplicationContext(),"Added New Friend: "+name,Toast.LENGTH_SHORT).show();
-
-                }
-            }
-        });
-
-
-
-    }
 
 }
 

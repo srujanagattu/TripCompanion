@@ -5,8 +5,13 @@
         android:icon="@drawable/account_circle_black_icon"
         android:title="My Account"
         app:showAsAction="ifRoom"/>
+    <item android:id="@+id/friend"
+
+        android:title="Friends"
+        app:showAsAction="ifRoom"/>
     <item android:id="@+id/logout"
 
         android:title="LOGOUT"
         app:showAsAction="ifRoom"/>
+
 </menu>

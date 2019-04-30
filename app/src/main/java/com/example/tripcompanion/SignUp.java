@@ -87,6 +87,7 @@ String gen;
             trip.put("favouriteDish", food1);
             trip.put("state","");
             trip.put("city","");
+            trip.put("mapObjId","xyz");
            // str=ParseUser.getCurrentUser().getObjectId();
             trip.saveInBackground(new SaveCallback() {
                 @Override

@@ -27,6 +27,8 @@ String test;
         setContentView(R.layout.destination);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        Intent ini=getIntent();
+        test=ini.getStringExtra("user_id");
 
     }
     @Override
@@ -42,7 +44,7 @@ String test;
             case R.id.account:
                 Intent ini=getIntent();
                 test=ini.getStringExtra("user_id");
-                Intent intent = new Intent(this, PersonDeatils.class);
+                Intent intent = new Intent(this, UserDetails.class);
                 Log.d("df","test id"+test);
 
                 intent.putExtra("objectId",test);
@@ -53,6 +55,13 @@ String test;
                 Intent intent1 = new Intent(this, Login.class);
 
                 startActivity(intent1);
+                return true;
+            case R.id.friend:
+                Intent intent2 = new Intent(this, friend.class);
+                intent2.putExtra("objectId",test);
+                startActivity(intent2);
+                Toast.makeText(getApplicationContext(),"Friend item is selected",Toast.LENGTH_SHORT).show();
+
                 return true;
              default:
                  return super.onOptionsItemSelected(item);
