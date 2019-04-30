@@ -62,10 +62,10 @@ public class Login extends AppCompatActivity {
                         EditText username1;
                         EditText password1;
                         username1 = (EditText) findViewById(R.id.username);
-                        String user = username1.getText().toString().trim().toLowerCase();
+                        String user = username1.getText().toString().trim();
 
                         password1 = (EditText) findViewById(R.id.password);
-                        String pass = password1.getText().toString().trim().toLowerCase();
+                        String pass = password1.getText().toString().trim();
 
                         Log.d("Username", "The username and password user entered" + user + "  " + pass);
                         if(user.equals("admin") && pass.equals("admin")){

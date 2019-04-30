@@ -45,8 +45,8 @@ String gen;
         EditText phoneNumber = (EditText) findViewById(R.id.phonenumber);
         EditText favrt = (EditText) findViewById(R.id.food);
 
-        String name = uname.getText().toString().trim().toLowerCase();
-        String mail = email.getText().toString().trim().toLowerCase();
+        String name = uname.getText().toString().trim();
+        String mail = email.getText().toString().trim();
         String pwd = password.getText().toString().trim();
         String pwd1 = password1.getText().toString().trim();
         String age1 = age.getText().toString().trim().toLowerCase();
@@ -139,10 +139,10 @@ public boolean validate() {
     EditText age = (EditText) findViewById(R.id.age);
     String age1 = age.getText().toString().trim().toLowerCase();
     int agee = Integer.parseInt(age1);
-    String name = uname.getText().toString().trim().toLowerCase();
-    String mail = email.getText().toString().trim().toLowerCase();
-    String pwd = password.getText().toString().trim().toLowerCase();
-    String pwd1 = password1.getText().toString().trim().toLowerCase();
+    String name = uname.getText().toString().trim();
+    String mail = email.getText().toString().trim();
+    String pwd = password.getText().toString().trim();
+    String pwd1 = password1.getText().toString().trim();
  return false;
 }
 

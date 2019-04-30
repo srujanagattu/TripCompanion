@@ -163,7 +163,7 @@ public class adminDetails  extends AppCompatActivity {
         Intent intent = new Intent(this, adminact.class);
 
 
-     
+
         startActivity(intent);
     }
 
