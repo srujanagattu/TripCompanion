@@ -68,13 +68,21 @@ public class Login extends AppCompatActivity {
                         String pass = password1.getText().toString().trim().toLowerCase();
 
                         Log.d("Username", "The username and password user entered" + user + "  " + pass);
-                        if (user.equals(userName) && pass.equals(password)) {
+                        if(user.equals("admin") && pass.equals("admin")){
+
+                            onPause();
+                            GoToAdminActivity();
+                        }
+                        else  if (user.equals(userName) && pass.equals(password)) {
                             test = tripList.get(i).getObjectId();
                             Log.d("dfsdf", "dsfsdf" + test);
                             onPause();
                             GoToTripActivity();
 
-                        } else {
+                        }
+
+
+                        else {
                             if (flag == 0) {
                                 displayToast("Please enter correct details!");
                             }
@@ -109,6 +117,17 @@ public class Login extends AppCompatActivity {
         Intent intent = new Intent(this, TripOptions.class);
         Log.d("dfsdf", "dristif" + test);
         intent.putExtra("user_id", test);
+        startActivity(intent);
+
+
+
+
+    }
+    public void GoToAdminActivity() {
+        onPause();
+        flag = 1;
+        Intent intent = new Intent(this, adminact.class);
+
         startActivity(intent);
 
 
