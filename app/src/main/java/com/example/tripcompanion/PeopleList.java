@@ -96,6 +96,11 @@ public class PeopleList extends AppCompatActivity {
 
                 startActivity(intent1);
                 return true;
+            case R.id.TripOption:
+                Intent intent3 = new Intent(this, TripOptions.class);
+                intent3.putExtra("user_id",test);
+                startActivity(intent3);
+                return true;
             case R.id.friend:
                 Intent intent2 = new Intent(this, friend.class);
                 intent2.putExtra("objectId",test);
@@ -253,7 +258,7 @@ public class PeopleList extends AppCompatActivity {
     }
     public void startOtherActivity(String objectIdd){
         Intent intent = new Intent(this, PersonDeatils.class);
-Log.d("df","Addsdd"+objectIdd);
+Log.d("df","object id in PL"+objectIdd);
         intent.putExtra("NAME",selectedItem);
         intent.putExtra("objectId",objectIdd);
         intent.putExtra("user_id", test);

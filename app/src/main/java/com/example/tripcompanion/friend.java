@@ -33,6 +33,7 @@ public class friend extends AppCompatActivity {
     String newOb;
     String objId;
     String[] abc={"Sorry you don't have any friends!!"};
+    String test1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -50,6 +51,7 @@ public class friend extends AppCompatActivity {
 
         Intent ini=getIntent();
         test=ini.getStringExtra("objectId");
+       // test1=ini.getStringExtra("user_id");
         Parse.initialize(this);
         ParseInstallation.getCurrentInstallation().saveInBackground();
         tryy();
@@ -67,7 +69,7 @@ public class friend extends AppCompatActivity {
             case R.id.account:
 
                 Intent intent = new Intent(this, UserDetails.class);
-                Log.d("df","test id"+test);
+                Log.d("df","test id in friend"+test);
 
                 intent.putExtra("objectId",test);
                 startActivity(intent);
@@ -77,6 +79,11 @@ public class friend extends AppCompatActivity {
                 Intent intent1 = new Intent(this, Login.class);
 
                 startActivity(intent1);
+                return true;
+            case R.id.TripOption:
+                Intent intent3 = new Intent(this, TripOptions.class);
+                intent3.putExtra("user_id",test);
+                startActivity(intent3);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
@@ -199,7 +206,7 @@ public class friend extends AppCompatActivity {
         lv.setAdapter(ad);
     }
     public void startOtherActivity(String objectIdd){
-        Intent intent = new Intent(this, UserDetails.class);
+        Intent intent = new Intent(this, friendDetails.class);
         Log.d("df","Addsdd"+objectIdd);
         intent.putExtra("NAME",selectedItem);
         intent.putExtra("objectId",objectIdd);

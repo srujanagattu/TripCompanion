@@ -63,6 +63,11 @@ String test;
                 Toast.makeText(getApplicationContext(),"Friend item is selected",Toast.LENGTH_SHORT).show();
 
                 return true;
+            case R.id.TripOption:
+                Intent intent3 = new Intent(this, TripOptions.class);
+                intent3.putExtra("user_id",test);
+                startActivity(intent3);
+                return true;
              default:
                  return super.onOptionsItemSelected(item);
 

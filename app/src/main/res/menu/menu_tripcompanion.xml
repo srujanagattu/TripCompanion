@@ -14,4 +14,8 @@
         android:title="LOGOUT"
         app:showAsAction="ifRoom"/>
 
+    <item android:id="@+id/TripOption"
+
+        android:title="Trip Options"
+        app:showAsAction="ifRoom"/>
 </menu>

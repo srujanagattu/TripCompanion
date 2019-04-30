@@ -1,7 +1,6 @@
 package com.example.tripcompanion;
 
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -19,7 +18,7 @@ import com.parse.ParseInstallation;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
 
-public class UserDetails extends AppCompatActivity {
+public class friendDetails extends AppCompatActivity {
     String name;
     String email;
     int age;
@@ -33,17 +32,21 @@ public class UserDetails extends AppCompatActivity {
     TextView fTv;
     TextView phoneTv;
     TextView nameTx;
+    String test1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.userdetails);
+        setContentView(R.layout.frienddetails);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         Intent ini=getIntent();
         objId=ini.getStringExtra("objectId");
+        Intent inii=getIntent();
+        test1=inii.getStringExtra("user_id");
+
         // name=ini.getStringExtra("NAME");
 
         Parse.initialize(this);
@@ -61,10 +64,9 @@ public class UserDetails extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item){
         switch(item.getItemId()){
             case R.id.account:
-                Intent ini=getIntent();
-                String test1=ini.getStringExtra("user_id");
+
                 Intent intent = new Intent(this, UserDetails.class);
-                Log.d("df","test id"+test1);
+                Log.d("df","test id in fd:"+test1);
 
                 intent.putExtra("objectId",test1);
                 startActivity(intent);
@@ -83,10 +85,8 @@ public class UserDetails extends AppCompatActivity {
 
                 return true;
             case R.id.TripOption:
-
                 Intent intent3 = new Intent(this, TripOptions.class);
-                String test11=intent3.getStringExtra("user_id");
-                intent3.putExtra("user_id",test11);
+                intent3.putExtra("user_id",test1);
                 startActivity(intent3);
                 return true;
             default:
@@ -144,6 +144,31 @@ public class UserDetails extends AppCompatActivity {
     }
 
 
+    public void removeFriend(View v){
+        Toast.makeText(getApplicationContext(),"Removed Friend: "+name,Toast.LENGTH_SHORT).show();
 
+        ParseQuery<ParseObject> query = ParseQuery.getQuery("Trip");
+        Log.d("jnsjdjzsn","err"+objId);
+
+        query.whereEqualTo("objectId",objId);
+        query.getInBackground(objId, new GetCallback<ParseObject>() {
+            @Override
+            public void done(ParseObject ob, com.parse.ParseException e) {
+                if (e == null) {
+
+
+                    ob.put("mapObjId","xyz");
+
+
+                    ob.saveInBackground();
+                   // Toast.makeText(getApplicationContext(),"Added New Friend: "+name,Toast.LENGTH_SHORT).show();
+
+                }
+            }
+        });
+
+
+
+    }
 }
 

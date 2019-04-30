@@ -67,7 +67,7 @@ String test;
                 Intent ini=getIntent();
               String test1=ini.getStringExtra("user_id");
                 Intent intent = new Intent(this, UserDetails.class);
-                Log.d("df","test id"+test1);
+                Log.d("df","test id in person det"+test1);
 
                 intent.putExtra("objectId",test1);
                 startActivity(intent);
@@ -77,6 +77,11 @@ String test;
                 Intent intent1 = new Intent(this, Login.class);
 
                 startActivity(intent1);
+                return true;
+            case R.id.TripOption:
+                Intent intent3 = new Intent(this, TripOptions.class);
+                intent3.putExtra("user_id",test);
+                startActivity(intent3);
                 return true;
             case R.id.friend:
                 Intent intent2 = new Intent(this, friend.class);
