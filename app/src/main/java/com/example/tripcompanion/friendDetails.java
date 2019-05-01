@@ -79,7 +79,7 @@ public class friendDetails extends AppCompatActivity {
                 return true;
             case R.id.friend:
                 Intent intent2 = new Intent(this, friend.class);
-                intent2.putExtra("objectId",objId);
+                intent2.putExtra("objectId",test1);
                 startActivity(intent2);
                 Toast.makeText(getApplicationContext(),"Friend item is selected",Toast.LENGTH_SHORT).show();
 
