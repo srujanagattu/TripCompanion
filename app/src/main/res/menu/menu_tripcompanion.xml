@@ -9,14 +9,11 @@
 
         android:title="Friends"
         app:showAsAction="ifRoom"/>
-
     <item android:id="@+id/TripOption"
-
         android:title="Trip Options"
-        app:showAsAction="ifRoom"/>
-    <item android:id="@+id/logout"
+        app:showAsAction="ifRoom"/>    <item android:id="@+id/logout"
 
         android:title="LOGOUT"
         app:showAsAction="ifRoom"/>
 
-</menu>
+        app:showAsAction="ifRoom"/></menu>
