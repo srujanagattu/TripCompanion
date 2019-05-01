@@ -125,6 +125,8 @@ String gen;
 //        toast.show();
 //    }
     public void gotoAnoActivity(){
+        Toast.makeText(getApplicationContext(),"User has been succesfully registered!",Toast.LENGTH_LONG).show();
+
         Intent intent = new Intent(this, Login.class);
 
         startActivity(intent);
