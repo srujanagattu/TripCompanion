@@ -1,6 +1,9 @@
 package com.example.tripcompanion;
 
+import android.Manifest;
 import android.content.pm.PackageManager;
+import android.location.Address;
+import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationListener;
 import android.support.v4.app.ActivityCompat;
@@ -24,6 +27,9 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.tasks.OnSuccessListener;
+
+import java.io.IOException;
+import java.util.List;
 
 import static android.Manifest.permission.ACCESS_COARSE_LOCATION;
 import static android.Manifest.permission.ACCESS_FINE_LOCATION;
@@ -74,11 +80,48 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             }
         });
     }
+
+    public void onMapSearch(View view) {
+        EditText locationSearch = (EditText) findViewById(R.id.editText);
+        String location = locationSearch.getText().toString();
+        List<Address> addressList = null;
+
+        if (location != null || !location.equals("")) {
+            Geocoder geocoder = new Geocoder(this);
+            try {
+                addressList = geocoder.getFromLocationName(location, 1);
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            Address address = addressList.get(0);
+            LatLng latLng = new LatLng(address.getLatitude(), address.getLongitude());
+            mMap.addMarker(new MarkerOptions().position(latLng).title("Marker"));
+            mMap.animateCamera(CameraUpdateFactory.newLatLng(latLng));
+        }
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu){
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu_tripcompanion,menu);
         return true;
+    }
+    public void onNormalMap(View view) {
+        mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+    }
+
+    public void onSatelliteMap(View view) {
+        mMap.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
+    }
+
+    public void onTerrainMap(View view) {
+        mMap.setMapType(GoogleMap.MAP_TYPE_TERRAIN);
+    }
+
+
+    public void onHybridMap(View view) {
+        mMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
     }
 
    /* public void findRestaurents(View v){
@@ -113,10 +156,14 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         googleMap.getUiSettings().setZoomGesturesEnabled(true);
 
         // Add a marker in Sydney and move the camera
-        LatLng currentLocation = new LatLng(latitude, longitude);
-        mMap.addMarker(new MarkerOptions().position(currentLocation).title("Your Location"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(currentLocation));
-
+        //LatLng currentLocation = new LatLng(latitude, longitude);
+        //mMap.addMarker(new MarkerOptions().position(currentLocation).title("Your Location"));
+        //mMap.moveCamera(CameraUpdateFactory.newLatLng(currentLocation));
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            // TODO: Consider calling
+            return;
+        }
+        mMap.setMyLocationEnabled(true);
         //Add sample location marker
         //final LatLng TutorialsPoint = new LatLng(21 , 57);
         //mMap.addMarker(new MarkerOptions().position(TutorialsPoint).title("TutorialsPoint"));
@@ -125,4 +172,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         ActivityCompat.requestPermissions(this, new String[]{ACCESS_FINE_LOCATION},1);
         ActivityCompat.requestPermissions(this, new String[]{ACCESS_COARSE_LOCATION},1);
     }
+
+
 }

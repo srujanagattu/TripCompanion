@@ -173,7 +173,7 @@ public boolean validate() {
         int radioId = radiogroup.getCheckedRadioButtonId();
         radiobutton = findViewById(radioId);
         gen=radiobutton.getText().toString();
-        Toast.makeText(this, radiobutton.getText()+" selected", Toast.LENGTH_SHORT).show();
+       // Toast.makeText(this, radiobutton.getText()+" selected", Toast.LENGTH_SHORT).show();
     }
     static boolean isValidEmail(String email) {
         String regex = "^[\\w-_\\.+]*[\\w-_\\.]\\@([\\w]+\\.)+[\\w]+[\\w]$";
