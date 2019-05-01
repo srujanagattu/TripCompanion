@@ -67,10 +67,10 @@ https://www.youtube.com/
 
 https://www.back4app.com/docs/android/parse-sdk
 
-# Credentials to login to our TripCompanion App
+# Credentials for admin login to our TripCompanion App
 
- - Username : dristi
- - Passwod : dristi123
+ - Username : admin
+ - Passwod : admin
 
 # Contributions of our Teammates:
 
