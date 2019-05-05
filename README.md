@@ -39,6 +39,8 @@ API level used to test the app.
 
 targetSdkVersion 28
 
+
+Google API Keys is Disabled
 # .apk file
 
 We have generated .apk file 
